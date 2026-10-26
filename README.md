@@ -1,13 +1,15 @@
 # ChronoTrace AI ⏱️🔍
 ### *Autonomous Video-to-Bug Archaeology & Self-Healing Engine*
 
+[![Live Demo](https://img.shields.io/badge/Vercel-Live%20Demo-black?style=flat-square&logo=vercel)](https://chronotrace-ai.vercel.app)
 [![Devpost Learn](https://img.shields.io/badge/Devpost%20Learn-Build%20With%20AI%3A%20Basics-blue?style=flat-square)](https://learn-ai-basics.devpost.com/)
 [![Next.js 15](https://img.shields.io/badge/Next.js-15.1.7-black?style=flat-square&logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.4-38bdf8?style=flat-square&logo=tailwindcss)](https://tailwindcss.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-emerald?style=flat-square)](LICENSE)
 
-> **Submission for the Devpost "Build With AI: Basics" Hackathon (October 2026)**  
+> 🚀 **Live Production App:** [https://chronotrace-ai.vercel.app](https://chronotrace-ai.vercel.app)  
+> 🏆 **Submission for the Devpost "Build With AI: Basics" Hackathon (October 2026)**  
 > *Built strictly using the Devpost Learn Skill Pack (`challengepost/learn-ai-basics`)*
 
 ---
