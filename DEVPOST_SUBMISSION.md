@@ -46,5 +46,7 @@ Before this hackathon, we would jump straight into coding or prompt engineering,
 ---
 
 ## Links
+* **Official Demo Video (2:18):** [https://chronotrace-ai.vercel.app/ChronoTrace_AI_Official_Demo.mp4](https://chronotrace-ai.vercel.app/ChronoTrace_AI_Official_Demo.mp4) (Local file: `ChronoTrace_AI_Official_Demo.mp4`)
 * **Public GitHub Repository:** [https://github.com/JeedimetlaCharan704/chronotrace-ai](https://github.com/JeedimetlaCharan704/chronotrace-ai)
+* **Live Web App:** [https://chronotrace-ai.vercel.app](https://chronotrace-ai.vercel.app)
 * **Planning Documents:** See `devpost/` directory in the repository (`scope.md`, `prd.md`, `spec.md`, `checklist.md`, `app-map.html`).

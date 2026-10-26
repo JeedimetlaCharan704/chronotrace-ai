@@ -116,9 +116,11 @@ npm run start
 
 ---
 
-## 🎥 Demo Video & Devpost Submission Guide
+## 🎥 Master Demo Video & Devpost Submission Guide
 
+* **Official 1080p Demo Video (2:18):** [`ChronoTrace_AI_Official_Demo.mp4`](ChronoTrace_AI_Official_Demo.mp4) (Direct download or view online at [https://chronotrace-ai.vercel.app/ChronoTrace_AI_Official_Demo.mp4](https://chronotrace-ai.vercel.app/ChronoTrace_AI_Official_Demo.mp4))
 * **Demo Video Script:** Refer to [`DEMO_VIDEO_SCRIPT.md`](DEMO_VIDEO_SCRIPT.md) for the exact 2-minute beat-by-beat voiceover and screen demonstration guide.
+* **Automated Video Recorder:** Inspect [`record_demo_video.py`](record_demo_video.py) and [`generate_voiceover.py`](generate_voiceover.py).
 * **Submission Pitch:** Refer to [`DEVPOST_SUBMISSION.md`](DEVPOST_SUBMISSION.md) for the pre-formatted submission text, elevator pitch, and learning reflections.
 
 ---

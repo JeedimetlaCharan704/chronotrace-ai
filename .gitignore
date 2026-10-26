@@ -9,6 +9,7 @@
 /out/
 build/
 dist/
+recorded_video/
 
 # Logs
 npm-debug.log*
@@ -28,3 +29,5 @@ devpost/learner-profile.md
 # Operating System
 .DS_Store
 Thumbs.db
+
+.vercel
