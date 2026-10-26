@@ -1,12 +1,12 @@
-"""ChronoTrace AI — Official 1080p 2-Minute Demo Video Recorder.
+"""ChronoTrace AI — Master 1080p Demo Video Recorder (Zero Blank Frame).
 
-Automates browser interactions matching the exact voiceover script:
-- Smooth Bezier cursor trajectories & click ripple animations
-- Video scrubber interaction (T=0 to T=10.2s)
-- Causality AST code examination
-- Playwright test execution
-- 1-Click patch verification
-- FFmpeg audio-video synchronization
+Key Fix:
+1. Navigates to local production server (http://localhost:3000) for instant hydration.
+2. Waits for h1 and document.fonts.ready.
+3. Injects sharp vector cursor.
+4. Dynamically calculates trim offset to cut initial browser startup.
+5. Synced segment choreography matching the 2m 35s voiceover audio.
+6. Guarantees frame 0:00:00.00 is the dark dashboard with zero blank white screen!
 """
 
 import os
@@ -104,9 +104,9 @@ def smooth_move(page, target_x, target_y, steps=25, delay=0.015):
     CURRENT_MOUSE_POS = [target_x, target_y]
 
 def smooth_click(page, selector, hover_time=0.4):
-    """Smooth move to element, hover, and trigger click with visual ripple."""
-    loc = page.locator(selector).first
-    box = loc.bounding_box()
+    """Locate element, move cursor smoothly to its center, and perform a realistic click."""
+    elem = page.wait_for_selector(selector, state="visible", timeout=10000)
+    box = elem.bounding_box()
     if box:
         target_x = box["x"] + box["width"] / 2
         target_y = box["y"] + box["height"] / 2
@@ -144,33 +144,42 @@ def record():
             record_video_size={"width": 1920, "height": 1080}
         )
 
+        t_context_start = time.time()
         page = context.new_page()
-        url = "https://chronotrace-ai.vercel.app/"
+
+        # Use local production server for instant zero-lag rendering
+        url = "http://localhost:3000"
         print(f"[*] Navigating to {url} and waiting for full render...")
         page.goto(url, wait_until="networkidle")
+        page.wait_for_selector("h1")
         page.evaluate("() => document.fonts.ready")
         inject_virtual_cursor(page)
 
-        # Initial stabilization pause
-        time.sleep(2.0)
+        # Let the dark dashboard settle for 1.5 seconds
+        time.sleep(1.5)
+
+        # Dynamic trim offset: precisely cuts the navigation/loading period
+        trim_offset = time.time() - t_context_start
+        print(f"[*] Dark UI rendered & settled! Trim offset established at: {trim_offset:.2f}s")
 
         # -------------------------------------------------------------
-        # SEGMENT 1 (0:00 - 0:20): Header, Branding & Problem Overview
+        # SEGMENT 1 (0:00 - 0:25): Header, Branding & Problem Overview
+        # (This is where the video and voiceover will start after trim!)
         # -------------------------------------------------------------
         print("[>] Segment 1: Header, Branding, & Overview...")
         smooth_move(page, 200, 30, steps=30)   # Logo & ChronoTrace AI
-        time.sleep(3.5)
+        time.sleep(5.5)
         smooth_move(page, 440, 30, steps=25)   # Devpost Learn Verified badge
-        time.sleep(4.0)
+        time.sleep(6.0)
         smooth_move(page, 960, 110, steps=30)  # Scenario Title & Severity badge
-        time.sleep(6.5)
+        time.sleep(8.5)
 
         # -------------------------------------------------------------
-        # SEGMENT 2 (0:20 - 0:45): Quadrant 1 - Temporal Video Scrubber
+        # SEGMENT 2 (0:25 - 0:55): Quadrant 1 - Temporal Video Scrubber
         # -------------------------------------------------------------
         print("[>] Segment 2: Quadrant 1 - Video Scrubber interaction...")
         smooth_move(page, 480, 260, steps=30)  # Canvas video surface
-        time.sleep(4.0)
+        time.sleep(5.0)
 
         # Scrub timeline to T=3.2s
         smooth_move(page, 320, 520, steps=25)
@@ -178,48 +187,48 @@ def record():
         page.mouse.down()
         smooth_move(page, 420, 520, steps=20)
         page.mouse.up()
-        time.sleep(3.5)
+        time.sleep(5.0)
 
         # Scrub timeline to T=7.8s (Click Event)
         smooth_move(page, 420, 520, steps=20)
         page.mouse.down()
         smooth_move(page, 580, 520, steps=25)
         page.mouse.up()
-        time.sleep(4.0)
+        time.sleep(6.0)
 
         # Scrub timeline to T=10.2s (Anomaly Flash)
         smooth_move(page, 580, 520, steps=20)
         page.mouse.down()
         smooth_move(page, 720, 520, steps=25)
         page.mouse.up()
-        time.sleep(5.0)
+        time.sleep(7.0)
 
         # -------------------------------------------------------------
-        # SEGMENT 3 (0:45 - 1:15): Quadrant 2 - Causality Graph & AST
+        # SEGMENT 3 (0:55 - 1:25): Quadrant 2 - Causality Graph & AST
         # -------------------------------------------------------------
         print("[>] Segment 3: Quadrant 2 - Causality AST localization...")
         # Move to Node 1 (Trigger)
         smooth_move(page, 1080, 260, steps=30)
-        time.sleep(3.0)
+        time.sleep(4.0)
         # Move to Node 2 (Component)
         smooth_move(page, 1260, 260, steps=25)
-        time.sleep(3.0)
+        time.sleep(4.0)
         # Move to Node 3 (AST Node)
         smooth_move(page, 1440, 260, steps=25)
-        time.sleep(3.0)
+        time.sleep(4.0)
         # Move to Node 4 (Exception)
         smooth_move(page, 1620, 260, steps=25)
-        time.sleep(4.0)
+        time.sleep(4.5)
 
         # Focus on source code line 42 fault
         smooth_move(page, 1350, 420, steps=30)
-        time.sleep(5.0)
+        time.sleep(5.5)
         # Forensic explanation box
         smooth_move(page, 1350, 540, steps=25)
-        time.sleep(6.0)
+        time.sleep(6.5)
 
         # -------------------------------------------------------------
-        # SEGMENT 4 (1:15 - 1:35): Quadrant 3 - Playwright Test Runner
+        # SEGMENT 4 (1:25 - 1:52): Quadrant 3 - Playwright Test Runner
         # -------------------------------------------------------------
         print("[>] Segment 4: Quadrant 3 - Playwright Test Execution...")
         smooth_scroll(page, 400, steps=25)
@@ -228,56 +237,58 @@ def record():
 
         # View test terminal
         smooth_move(page, 480, 680, steps=30)
-        time.sleep(3.0)
+        time.sleep(3.5)
 
         # Click Run Reproduction Test
         smooth_click(page, "button:has-text('Run Reproduction Test')")
         print("    Executing simulated Playwright runner...")
-        time.sleep(5.0)
+        time.sleep(7.0)
 
         # Hover over failure log
         smooth_move(page, 480, 800, steps=25)
-        time.sleep(6.0)
+        time.sleep(8.0)
 
         # -------------------------------------------------------------
-        # SEGMENT 5 (1:35 - 1:55): Quadrant 4 - Verified Patch & Remediation
+        # SEGMENT 5 (1:52 - 2:15): Quadrant 4 - Verified Patch & Remediation
         # -------------------------------------------------------------
         print("[>] Segment 5: Quadrant 4 - Verified Patch...")
         # Hover over unified diff lines
         smooth_move(page, 1350, 680, steps=30)
-        time.sleep(4.0)
+        time.sleep(4.5)
 
         # Click Apply Patch & Verify (1-Click)
         smooth_click(page, "button:has-text('Apply Patch & Verify')")
         print("    Applying patch & re-running test suite...")
-        time.sleep(4.0)
+        time.sleep(5.5)
 
         # Hover over green verification banner
         smooth_move(page, 1350, 600, steps=25)
-        time.sleep(6.0)
+        time.sleep(8.0)
 
         # -------------------------------------------------------------
-        # SEGMENT 6 (1:55 - 2:05): Methodology Modal
+        # SEGMENT 6 (2:15 - 2:27): Methodology Modal
         # -------------------------------------------------------------
         print("[>] Segment 6: Methodology Modal & Devpost Learn Specs...")
         smooth_scroll(page, -400, steps=25)
-        time.sleep(1.5)
+        time.sleep(2.0)
         inject_virtual_cursor(page)
 
         # Click Methodology button in header
         smooth_click(page, "button:has-text('Methodology')")
-        time.sleep(4.0)
+        time.sleep(6.0)
 
         # Close Modal
         smooth_click(page, "button:has-text('Got It')")
-        time.sleep(2.0)
+        time.sleep(2.5)
 
         # -------------------------------------------------------------
-        # CLOSING (2:05 - 2:12): GitHub & Final Call to Action
+        # CLOSING (2:27 - 2:38): GitHub & Final Call to Action
         # -------------------------------------------------------------
         print("[>] Closing: GitHub & Live links...")
         smooth_move(page, 1720, 30, steps=25)  # Hover GitHub button
-        time.sleep(4.0)
+        time.sleep(6.0)
+        smooth_move(page, 960, 50, steps=30)   # Center rest on dashboard
+        time.sleep(5.0)
 
         # Close page to flush raw webm video
         page.close()
@@ -288,17 +299,20 @@ def record():
     print(f"\n[+] Raw browser video saved: {video_path}")
 
     # -------------------------------------------------------------
-    # MASTER QUALITY MULTIPLEXING: Video + Voiceover Audio Merging
+    # MASTER QUALITY ENCODING: Trim Initial Startup Period
+    # + Multiplex with Neural Voiceover Audio
     # -------------------------------------------------------------
     ffmpeg = imageio_ffmpeg.get_ffmpeg_exe()
     audio_path = os.path.abspath("voiceover.mp3")
     final_output = os.path.abspath("ChronoTrace_AI_Official_Demo.mp4")
 
-    print("[*] Multiplexing video with neural voiceover audio using FFmpeg...")
+    trim_str = f"{trim_offset:.3f}"
+    print(f"[*] Trimming initial {trim_str}s browser startup and multiplexing audio...")
 
     cmd = [
         ffmpeg,
         "-y",
+        "-ss", trim_str,
         "-i", video_path,
         "-i", audio_path,
         "-c:v", "libx264",
@@ -317,9 +331,6 @@ def record():
         print(f"\n[SUCCESS] Master Demo Video Created: {final_output} ({file_size_mb:.2f} MB)")
     else:
         print("[!] Multiplexing failed:", res.stderr)
-        # Fallback without audio
-        cmd_fallback = [ffmpeg, "-y", "-i", video_path, "-c:v", "libx264", "-crf", "20", final_output]
-        subprocess.run(cmd_fallback)
 
 if __name__ == "__main__":
     record()

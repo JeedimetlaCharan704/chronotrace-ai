@@ -29,7 +29,7 @@ async def generate():
     voice = "en-IN-PrabhatNeural"
     output_file = os.path.abspath("voiceover.mp3")
     print(f"[*] Generating voiceover audio with voice: {voice}...")
-    communicate = edge_tts.Communicate(TEXT, voice, rate="+2%")
+    communicate = edge_tts.Communicate(TEXT, voice, rate="+25%")
     await communicate.save(output_file)
     print(f"[+] Voiceover generated successfully: {output_file} ({os.path.getsize(output_file)} bytes)")
 
