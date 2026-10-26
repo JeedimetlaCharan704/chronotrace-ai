@@ -76,11 +76,11 @@ Per the hackathon rules, this project was developed using the inverted planning 
 
 | Planning Artifact | Description | Status |
 | :--- | :--- | :--- |
-| [`devpost/scope.md`](devpost/scope.md) | Discovery, kernel, user, and strict PoC boundaries | **Approved** |
+| [`scope.md`](scope.md) / [`devpost/scope.md`](devpost/scope.md) | Discovery, kernel, user, and strict PoC boundaries | **Approved** |
 | [`devpost/scope.html`](devpost/scope.html) | Interactive HTML companion with SVG core loop diagram | **Approved** |
-| [`devpost/prd.md`](devpost/prd.md) | 5-step core journey, 4-quadrant layout, and feature specs | **Approved** |
+| [`prd.md`](prd.md) / [`devpost/prd.md`](devpost/prd.md) | 5-step core journey, 4-quadrant layout, and feature specs | **Approved** |
 | [`devpost/prd.html`](devpost/prd.html) | Interactive HTML companion with layout wireframes | **Approved** |
-| [`devpost/spec.md`](devpost/spec.md) | Technical stack, data model, failure modes, and file tree | **Approved** |
+| [`spec.md`](spec.md) / [`devpost/spec.md`](devpost/spec.md) | Technical stack, data model, failure modes, and file tree | **Approved** |
 | [`devpost/spec.html`](devpost/spec.html) | Interactive HTML companion with architecture specs | **Approved** |
 | [`devpost/checklist.md`](devpost/checklist.md) | 5 verifiable build slices, checkpoints, and code tour | **Approved** |
 | [`devpost/app-map.html`](devpost/app-map.html) | Visual code tour and project-grounded practices | **Approved** |
@@ -118,7 +118,7 @@ npm run start
 
 ## 🎥 Master Demo Video & Devpost Submission Guide
 
-* **Official 1080p Demo Video (2:18):** [`ChronoTrace_AI_Official_Demo.mp4`](ChronoTrace_AI_Official_Demo.mp4) (Direct download or view online at [https://chronotrace-ai.vercel.app/ChronoTrace_AI_Official_Demo.mp4](https://chronotrace-ai.vercel.app/ChronoTrace_AI_Official_Demo.mp4))
+* **Official 1080p Demo Video (2:35):** [`ChronoTrace_AI_Official_Demo.mp4`](ChronoTrace_AI_Official_Demo.mp4) (Direct download or view online at [https://chronotrace-ai.vercel.app/ChronoTrace_AI_Official_Demo.mp4](https://chronotrace-ai.vercel.app/ChronoTrace_AI_Official_Demo.mp4))
 * **Demo Video Script:** Refer to [`DEMO_VIDEO_SCRIPT.md`](DEMO_VIDEO_SCRIPT.md) for the exact 2-minute beat-by-beat voiceover and screen demonstration guide.
 * **Automated Video Recorder:** Inspect [`record_demo_video.py`](record_demo_video.py) and [`generate_voiceover.py`](generate_voiceover.py).
 * **Submission Pitch:** Refer to [`DEVPOST_SUBMISSION.md`](DEVPOST_SUBMISSION.md) for the pre-formatted submission text, elevator pitch, and learning reflections.
