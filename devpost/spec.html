@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChronoTrace AI — Technical Spec Companion</title>
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: #111827;
+      --border: #1f2937;
+      --text: #f3f4f6;
+      --text-muted: #9ca3af;
+      --primary: #3b82f6;
+      --accent: #10b981;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 2.5rem 1.5rem;
+      max-width: 950px;
+      margin: 0 auto;
+    }
+    .header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      margin-bottom: 0.75rem;
+    }
+    h1 { font-size: 2.25rem; font-weight: 800; color: #fff; margin-bottom: 0.5rem; }
+    .subtitle { color: var(--text-muted); font-size: 1.15rem; }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    h2 { font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 1rem; }
+    pre {
+      background: #030712;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 1rem;
+      overflow-x: auto;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.85rem;
+      color: #38bdf8;
+    }
+    .footer { text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-top: 3rem; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <span class="badge">Approved • Devpost Learn Spec</span>
+    <h1>ChronoTrace AI — Technical Specification</h1>
+    <p class="subtitle">Architecture, data models, component hierarchy, and execution semantics.</p>
+  </div>
+
+  <div class="card">
+    <h2>📐 Architecture & Data Flow</h2>
+    <pre>
+[User Screen Recording] ──> [Keyframe Canvas Parser] ──> [Temporal Milestones]
+                                                                  │
+                                                                  ▼
+[Verified Patch] <── [Playwright Test Runner] <── [AST Root-Cause Engine]
+    │                        │                             │
+    └─ Unified Diff          └─ Live Virtual Terminal      └─ File & Line Coordinates
+    </pre>
+  </div>
+
+  <div class="card">
+    <h2>🛠️ Production Technology Stack</h2>
+    <ul style="list-style: none; padding-left: 0;">
+      <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.05);"><strong>Framework:</strong> Next.js 15 (React 19, TypeScript 5.5)</li>
+      <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.05);"><strong>Styling:</strong> Tailwind CSS v4, Lucide React</li>
+      <li style="padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.05);"><strong>Test Synthesizer:</strong> Headless Playwright/Jest emulation engine</li>
+      <li style="padding: 0.5rem 0;"><strong>Deployment Target:</strong> Vercel Serverless Edge</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    ChronoTrace AI • Built with Devpost Learn Skill Pack • Status: Approved
+  </div>
+</body>
+</html>

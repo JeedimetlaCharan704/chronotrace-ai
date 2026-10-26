@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChronoTrace AI — PRD Companion</title>
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: #111827;
+      --border: #1f2937;
+      --text: #f3f4f6;
+      --text-muted: #9ca3af;
+      --primary: #3b82f6;
+      --accent: #10b981;
+      --danger: #ef4444;
+      --warning: #f59e0b;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 2.5rem 1.5rem;
+      max-width: 950px;
+      margin: 0 auto;
+    }
+    .header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      margin-bottom: 0.75rem;
+    }
+    h1 { font-size: 2.25rem; font-weight: 800; color: #fff; margin-bottom: 0.5rem; }
+    .subtitle { color: var(--text-muted); font-size: 1.15rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin-bottom: 1.5rem; }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    h2 { font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 1rem; }
+    .step { display: flex; gap: 1rem; margin-bottom: 1rem; }
+    .step-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+    .step-content strong { color: #fff; display: block; margin-bottom: 0.2rem; }
+    .step-content p { color: var(--text-muted); font-size: 0.9rem; }
+    .quadrant-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    .quad-item {
+      background: #030712;
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 1rem;
+      font-size: 0.85rem;
+    }
+    .quad-title { font-weight: bold; color: var(--primary); margin-bottom: 0.25rem; }
+    .footer { text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-top: 3rem; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <span class="badge">Approved • Devpost Learn PRD</span>
+    <h1>ChronoTrace AI — Product Requirements</h1>
+    <p class="subtitle">Complete functional specification for the visual incident archaeology workspace.</p>
+  </div>
+
+  <div class="card" style="margin-bottom: 1.5rem;">
+    <h2>🚀 The 5-Step Core Journey</h2>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <strong>Video / Scenario Ingestion</strong>
+        <p>Drop a 15s MP4/WebM screen recording or select one of 3 real-world bug benchmarks.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <strong>Visual Keyframe Decomposition</strong>
+        <p>Temporal OCR and spatial bounding boxes map cursor trajectory and stuck UI elements.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <strong>Causality Chain & AST Localization</strong>
+        <p>Pinpoints the exact faulty source file, line number, and AST expression without requiring logs.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <strong>Reproduction Test Execution</strong>
+        <p>Synthesizes and runs an executable Playwright test script that reliably reproduces the failure.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-content">
+        <strong>Self-Healing Patch Verification</strong>
+        <p>Displays side-by-side code diff, applies the patch, and re-executes tests with a green pass.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom: 1.5rem;">
+    <h2>🖥️ Unified 4-Quadrant Workspace Layout</h2>
+    <div class="quadrant-box">
+      <div class="quad-item">
+        <div class="quad-title">Quadrant 1: Video Scrubber</div>
+        Synchronized frame-by-frame canvas player with cursor tracking and visual anomaly highlights.
+      </div>
+      <div class="quad-item">
+        <div class="quad-title">Quadrant 2: AST Root Cause</div>
+        Interactive causality tree and live code syntax viewer pinpointing the exact defect line.
+      </div>
+      <div class="quad-item">
+        <div class="quad-title">Quadrant 3: Test Runner</div>
+        Playwright test synthesizer and live execution terminal with streaming assertion logs.
+      </div>
+      <div class="quad-item">
+        <div class="quad-title">Quadrant 4: Verified Patch</div>
+        Surgical unified diff viewer with 1-click test re-run and patch export capabilities.
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    ChronoTrace AI • Built with Devpost Learn Skill Pack • Status: Approved
+  </div>
+</body>
+</html>

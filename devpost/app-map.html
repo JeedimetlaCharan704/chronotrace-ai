@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChronoTrace AI — App Map & Code Tour</title>
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: #111827;
+      --border: #1f2937;
+      --text: #f3f4f6;
+      --text-muted: #9ca3af;
+      --primary: #3b82f6;
+      --accent: #10b981;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 2.5rem 1.5rem;
+      max-width: 950px;
+      margin: 0 auto;
+    }
+    .header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      margin-bottom: 0.75rem;
+    }
+    h1 { font-size: 2.25rem; font-weight: 800; color: #fff; margin-bottom: 0.5rem; }
+    .subtitle { color: var(--text-muted); font-size: 1.15rem; }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    h2 { font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 1rem; }
+    .tour-stop {
+      border-left: 3px solid var(--primary);
+      padding-left: 1rem;
+      margin-bottom: 1.25rem;
+    }
+    .tour-stop h3 { font-size: 1.05rem; color: #fff; margin-bottom: 0.25rem; }
+    .tour-stop p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.25rem; }
+    .code-ref {
+      font-family: ui-monospace, monospace;
+      background: #030712;
+      padding: 0.2rem 0.5rem;
+      border-radius: 0.25rem;
+      font-size: 0.8rem;
+      color: #38bdf8;
+    }
+    .practice-box {
+      background: rgba(59, 130, 246, 0.1);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      border-radius: 0.5rem;
+      padding: 1.25rem;
+      margin-top: 1rem;
+    }
+    .footer { text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-top: 3rem; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <span class="badge">Devpost Learn App Map</span>
+    <h1>ChronoTrace AI — Code Tour & Architecture</h1>
+    <p class="subtitle">Guided tour of codebase components, execution pipelines, and reusable practices.</p>
+  </div>
+
+  <div class="card">
+    <h2>🗺️ Interactive Code Tour</h2>
+
+    <div class="tour-stop">
+      <h3>Stop 1: Ground Truth Data & Benchmark Scenarios</h3>
+      <p>Defines the visual keyframes, temporal milestones, AST coordinates, and patches for real-world defects.</p>
+      <span class="code-ref">src/data/benchmarkScenarios.ts</span>
+    </div>
+
+    <div class="tour-stop">
+      <h3>Stop 2: Visual Scrubber & Temporal Cursor Tracker</h3>
+      <p>Synchronizes canvas frame rendering with cursor trajectories and bounding box anomaly highlights.</p>
+      <span class="code-ref">src/components/VideoScrubber.tsx</span>
+    </div>
+
+    <div class="tour-stop">
+      <h3>Stop 3: Causality Graph & AST Localization</h3>
+      <p>Maps the temporal action state to the exact component file and failing line of source code.</p>
+      <span class="code-ref">src/components/CausalityAst.tsx</span>
+    </div>
+
+    <div class="tour-stop">
+      <h3>Stop 4: Playwright Test Synthesizer & Virtual Terminal</h3>
+      <p>Synthesizes executable test specifications and emulates headless test execution with streaming logs.</p>
+      <span class="code-ref">src/components/TestRunner.tsx</span>
+    </div>
+
+    <div class="tour-stop">
+      <h3>Stop 5: Surgical Diff Viewer & Verification Engine</h3>
+      <p>Displays side-by-side patch diffs and re-executes the test suite to guarantee zero-regression remediation.</p>
+      <span class="code-ref">src/components/PatchDiff.tsx</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>💡 Reusable Practice for Future Projects</h2>
+    <div class="practice-box">
+      <strong>Inverted Spec-Driven Verification:</strong>
+      <p style="margin-top: 0.5rem; color: #e5e7eb; font-size: 0.95rem;">
+        Never let an AI coding agent generate solution code until you have established the reproduction test and failure condition. By writing the test and specifying the exact failing line first, the AI is constrained to a surgical, verifiable fix rather than hallucinating unbounded codebase rewrites.
+      </p>
+    </div>
+  </div>
+
+  <div class="footer">
+    ChronoTrace AI • Built with Devpost Learn Skill Pack • All Slices Verified
+  </div>
+</body>
+</html>

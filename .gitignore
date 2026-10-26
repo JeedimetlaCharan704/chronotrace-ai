@@ -1,0 +1,30 @@
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+.yarn/cache
+
+# Next.js build
+/.next/
+/out/
+build/
+dist/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files
+.env
+.env*.local
+
+# Vercel
+.vercel
+
+# Devpost local profile (per Devpost Learn Skill Pack specifications)
+devpost/learner-profile.md
+
+# Operating System
+.DS_Store
+Thumbs.db
