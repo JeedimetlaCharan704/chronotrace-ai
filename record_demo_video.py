@@ -147,8 +147,13 @@ def record():
         t_context_start = time.time()
         page = context.new_page()
 
-        # Use local production server for instant zero-lag rendering
-        url = "http://localhost:3000"
+        # Use local server if running, otherwise use production Vercel deployment
+        import urllib.request
+        try:
+            urllib.request.urlopen("http://localhost:3000", timeout=1)
+            url = "http://localhost:3000"
+        except Exception:
+            url = "https://chronotrace-ai.vercel.app"
         print(f"[*] Navigating to {url} and waiting for full render...")
         page.goto(url, wait_until="networkidle")
         page.wait_for_selector("h1")
