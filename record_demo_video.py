@@ -168,23 +168,23 @@ def record():
         print(f"[*] Dark UI rendered & settled! Trim offset established at: {trim_offset:.2f}s")
 
         # -------------------------------------------------------------
-        # SEGMENT 1 (0:00 - 0:25): Header, Branding & Problem Overview
+        # SEGMENT 1 (0:00 - 0:31): Header, Branding & Problem Overview
         # (This is where the video and voiceover will start after trim!)
         # -------------------------------------------------------------
         print("[>] Segment 1: Header, Branding, & Overview...")
         smooth_move(page, 200, 30, steps=30)   # Logo & ChronoTrace AI
-        time.sleep(5.5)
+        time.sleep(7.5)
         smooth_move(page, 440, 30, steps=25)   # Devpost Learn Verified badge
-        time.sleep(6.0)
-        smooth_move(page, 960, 110, steps=30)  # Scenario Title & Severity badge
         time.sleep(8.5)
+        smooth_move(page, 960, 110, steps=30)  # Scenario Title & Severity badge
+        time.sleep(12.0)
 
         # -------------------------------------------------------------
-        # SEGMENT 2 (0:25 - 0:55): Quadrant 1 - Temporal Video Scrubber
+        # SEGMENT 2 (0:31 - 1:04): Quadrant 1 - Temporal Video Scrubber
         # -------------------------------------------------------------
         print("[>] Segment 2: Quadrant 1 - Video Scrubber interaction...")
         smooth_move(page, 480, 260, steps=30)  # Canvas video surface
-        time.sleep(5.0)
+        time.sleep(5.5)
 
         # Scrub timeline to T=3.2s
         smooth_move(page, 320, 520, steps=25)
@@ -192,24 +192,24 @@ def record():
         page.mouse.down()
         smooth_move(page, 420, 520, steps=20)
         page.mouse.up()
-        time.sleep(5.0)
+        time.sleep(6.5)
 
         # Scrub timeline to T=7.8s (Click Event)
         smooth_move(page, 420, 520, steps=20)
         page.mouse.down()
         smooth_move(page, 580, 520, steps=25)
         page.mouse.up()
-        time.sleep(6.0)
+        time.sleep(7.5)
 
         # Scrub timeline to T=10.2s (Anomaly Flash)
         smooth_move(page, 580, 520, steps=20)
         page.mouse.down()
         smooth_move(page, 720, 520, steps=25)
         page.mouse.up()
-        time.sleep(7.0)
+        time.sleep(9.0)
 
         # -------------------------------------------------------------
-        # SEGMENT 3 (0:55 - 1:25): Quadrant 2 - Causality Graph & AST
+        # SEGMENT 3 (1:04 - 1:28): Quadrant 2 - Causality Graph & AST
         # -------------------------------------------------------------
         print("[>] Segment 3: Quadrant 2 - Causality AST localization...")
         # Move to Node 1 (Trigger)
@@ -227,51 +227,51 @@ def record():
 
         # Focus on source code line 42 fault
         smooth_move(page, 1350, 420, steps=30)
-        time.sleep(5.5)
+        time.sleep(4.5)
         # Forensic explanation box
         smooth_move(page, 1350, 540, steps=25)
-        time.sleep(6.5)
+        time.sleep(4.5)
 
         # -------------------------------------------------------------
-        # SEGMENT 4 (1:25 - 1:52): Quadrant 3 - Playwright Test Runner
+        # SEGMENT 4 (1:28 - 1:56): Quadrant 3 - Playwright Test Runner
         # -------------------------------------------------------------
         print("[>] Segment 4: Quadrant 3 - Playwright Test Execution...")
         smooth_scroll(page, 400, steps=25)
-        time.sleep(2.0)
+        time.sleep(2.5)
         inject_virtual_cursor(page)
 
         # View test terminal
         smooth_move(page, 480, 680, steps=30)
-        time.sleep(3.5)
+        time.sleep(4.0)
 
         # Click Run Reproduction Test
         smooth_click(page, "button:has-text('Run Reproduction Test')")
         print("    Executing simulated Playwright runner...")
-        time.sleep(7.0)
+        time.sleep(8.0)
 
         # Hover over failure log
         smooth_move(page, 480, 800, steps=25)
-        time.sleep(8.0)
+        time.sleep(12.0)
 
         # -------------------------------------------------------------
-        # SEGMENT 5 (1:52 - 2:15): Quadrant 4 - Verified Patch & Remediation
+        # SEGMENT 5 (1:56 - 2:22): Quadrant 4 - Verified Patch & Remediation
         # -------------------------------------------------------------
         print("[>] Segment 5: Quadrant 4 - Verified Patch...")
         # Hover over unified diff lines
         smooth_move(page, 1350, 680, steps=30)
-        time.sleep(4.5)
+        time.sleep(5.0)
 
         # Click Apply Patch & Verify (1-Click)
         smooth_click(page, "button:has-text('Apply Patch & Verify')")
         print("    Applying patch & re-running test suite...")
-        time.sleep(5.5)
+        time.sleep(6.5)
 
         # Hover over green verification banner
         smooth_move(page, 1350, 600, steps=25)
-        time.sleep(8.0)
+        time.sleep(12.5)
 
         # -------------------------------------------------------------
-        # SEGMENT 6 (2:15 - 2:27): Methodology Modal
+        # SEGMENT 6 (2:22 - 2:37): Methodology Modal
         # -------------------------------------------------------------
         print("[>] Segment 6: Methodology Modal & Devpost Learn Specs...")
         smooth_scroll(page, -400, steps=25)
@@ -280,20 +280,20 @@ def record():
 
         # Click Methodology button in header
         smooth_click(page, "button:has-text('Methodology')")
-        time.sleep(6.0)
+        time.sleep(8.0)
 
         # Close Modal
         smooth_click(page, "button:has-text('Got It')")
-        time.sleep(2.5)
+        time.sleep(3.5)
 
         # -------------------------------------------------------------
-        # CLOSING (2:27 - 2:38): GitHub & Final Call to Action
+        # CLOSING (2:37 - 2:53): GitHub & Final Call to Action
         # -------------------------------------------------------------
         print("[>] Closing: GitHub & Live links...")
         smooth_move(page, 1720, 30, steps=25)  # Hover GitHub button
-        time.sleep(6.0)
+        time.sleep(7.5)
         smooth_move(page, 960, 50, steps=30)   # Center rest on dashboard
-        time.sleep(5.0)
+        time.sleep(7.5)
 
         # Close page to flush raw webm video
         page.close()
@@ -333,6 +333,8 @@ def record():
     res = subprocess.run(cmd, capture_output=True, text=True)
     if res.returncode == 0:
         file_size_mb = os.path.getsize(final_output) / (1024 * 1024)
+        import shutil
+        shutil.copy2(final_output, os.path.join("public", "ChronoTrace_AI_Official_Demo.mp4"))
         print(f"\n[SUCCESS] Master Demo Video Created: {final_output} ({file_size_mb:.2f} MB)")
     else:
         print("[!] Multiplexing failed:", res.stderr)
